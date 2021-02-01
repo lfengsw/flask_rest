@@ -1,5 +1,4 @@
 import uuid
-
 from flask import jsonify
 from flask import request
 from flask_restful import Resource,Api,fields,marshal_with, abort, marshal
@@ -27,11 +26,11 @@ user_result_fields = {
 
 class UserInfo(Resource):
 
-    #@marshal_with(user_result_fields)
+    @marshal_with(user_result_fields)
     def get(self):
         user = UserModel.query.all()
         return {
-                "list":marshal(user,user_fiels),
+                "list":user,
                 "extra":""
         }
 
@@ -39,7 +38,7 @@ class UserInfo(Resource):
     def post(self):
         name = request.form.get('name')
         password = request.form.get('password')
-        token= uuid.uuid4().hex
+        token= str(uuid.uuid4().hex)
         user = UserModel()
         if not  user.query.filter_by(username=name).count():
             user.username = name

@@ -14,7 +14,7 @@ def get_database_uri(dbinfo):
 class Config:
     DEBUG = True
     TESTTING = True
-    SECRET_KEY = uuid.uuid4()
+    SECRET_KEY = str(uuid.uuid4())
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
