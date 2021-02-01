@@ -10,7 +10,6 @@ def get_database_uri(dbinfo):
     encoding = dbinfo.get("ENCODING") or "utf8"
     return '{}+{}://{}:{}@{}:{}/{}?charset={}'.format(type,driver,user,password,host,port,db,encoding)
 
-
 class Config:
     DEBUG = True
     TESTTING = True

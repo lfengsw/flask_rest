@@ -22,8 +22,6 @@ user_result_fields = {
     "extra":fields.String
 }
 
-
-
 class UserInfo(Resource):
 
     @marshal_with(user_result_fields)
@@ -33,7 +31,6 @@ class UserInfo(Resource):
                 "list":user,
                 "extra":""
         }
-
 
     def post(self):
         name = request.form.get('name')
@@ -49,6 +46,7 @@ class UserInfo(Resource):
         else:
             return jsonify({"code": 200, "msg": "error"})
 
-
 api.add_resource(UserInfo,'/user')
+
+
 
