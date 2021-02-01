@@ -46,7 +46,7 @@ class UserInfo(Resource):
         else:
             return jsonify({"code": 200, "msg": "error"})
 
-api.add_resource(UserInfo,'/user')
+api.add_resource(UserInfo,'/user/')
 
 
 
