@@ -34,4 +34,22 @@ class UserModel(db.Model):
             return True
 
 
+class AddressModel(db.Model):
+    __tablename__='address'
+    id = db.Column(db.Integer,primary_key=True)
+    uid = db.Column(db.Integer)
+    detail=db.Column(db.String(128))
+
+    def save(self):
+        try:
+            db.session.add(self)
+            db.session.commit()
+        except:
+            return False
+        else:
+            return True
+
+
+
+
 

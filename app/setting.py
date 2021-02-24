@@ -35,7 +35,7 @@ class DevelopConfig(Config):
 
 
 class TestingConfig(Config):
-    DEBUG = False
+    DEBUG = True
 
     DATABASE = {
         'HOST': '192.168.50.68',
