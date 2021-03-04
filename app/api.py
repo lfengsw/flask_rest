@@ -87,7 +87,6 @@ class AddressResource(Resource):
         query=db.session.query(AddressModel.uid).outerjoin(UserModel,UserModel.id == AddressModel.uid)
         print(query)
 
-
         return jsonify({
             "code":200,
             "msg":"success",
